@@ -109,3 +109,8 @@ mean_dat_grp <- group_by(mean_dat, Act_ID, Subj_ID)
 
 ## Calculate mean of each variable
 mean_result <- summarise_all(mean_dat_grp, funs(mean(.)))
+
+## Save data
+write.csv(full_dat_col, "full_data.csv")
+write.csv(mean_result, "mean_data.csv")
+write.table(mean_result, "mean_data.txt", row.names = FALSE)
